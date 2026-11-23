@@ -1,0 +1,6 @@
+{
+  "name": "KOVA Atelier",
+  "description": "Minimalist D2C architectural objects, lighting, audio, and everyday studio goods with integrated admin operations and supplier fulfillment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
