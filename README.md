@@ -7,6 +7,7 @@
 <p align="center">
   A full-stack D2C e-commerce and dropshipping platform designed to deliver a seamless, secure, and scalable online shopping experience.
 </p>
+
 <p align="center">
   ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
   ![TypeScript](https://img.shields.io/badge/TypeScript-7-3178C6?logo=typescript&logoColor=white)
@@ -14,3 +15,4 @@
   ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
   ![License](https://img.shields.io/badge/License-MIT-green)
 </p>
+---
