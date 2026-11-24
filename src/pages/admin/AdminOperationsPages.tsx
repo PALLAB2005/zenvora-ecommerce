@@ -45,7 +45,7 @@ export function AdminPurchaseOrdersPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold text-[#171717]">Purchase Orders</h1>
           <p className="mt-1 text-sm text-[#737373]">Replenish workshop stock directly with partner suppliers.</p>
@@ -255,40 +255,42 @@ export function AdminCouponsPage() {
       </div>
 
       <div className="bg-white border border-[#E5E5E5] rounded-2xl overflow-hidden">
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr className="border-b border-[#E5E5E5] bg-[#F8F8F7] text-[11px] font-semibold uppercase tracking-wider text-[#737373]">
-              <th className="py-3 px-4">Code</th>
-              <th className="py-3 px-4">Discount</th>
-              <th className="py-3 px-4 text-right">Min Order</th>
-              <th className="py-3 px-4 text-right">Redemptions</th>
-              <th className="py-3 px-4">Status</th>
-              <th className="py-3 px-4 text-right">Toggle</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-[#E5E5E5] text-sm">
-            {coupons.map((c) => (
-              <tr key={c.code}>
-                <td className="py-3 px-4 font-mono font-bold text-[#171717]">{c.code}</td>
-                <td className="py-3 px-4 text-[#737373]">
-                  {c.type === 'percentage'
-                    ? `${c.value}% off`
-                    : c.type === 'fixed'
-                    ? `${formatCurrency(c.value)} off`
-                    : 'Free shipping'}
-                </td>
-                <td className="py-3 px-4 text-right tabular-nums">{formatCurrency(c.minOrderAmount)}</td>
-                <td className="py-3 px-4 text-right tabular-nums">{c.usageCount}</td>
-                <td className="py-3 px-4"><StatusLabel status={c.active ? 'active' : 'draft'} /></td>
-                <td className="py-3 px-4 text-right">
-                  <Button variant="outline" size="sm" onClick={() => toggleCoupon(c.code)}>
-                    {c.active ? 'Pause' : 'Activate'}
-                  </Button>
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[640px] text-left border-collapse">
+            <thead>
+              <tr className="border-b border-[#E5E5E5] bg-[#F8F8F7] text-[11px] font-semibold uppercase tracking-wider text-[#737373]">
+                <th className="py-3 px-4">Code</th>
+                <th className="py-3 px-4">Discount</th>
+                <th className="py-3 px-4 text-right">Min Order</th>
+                <th className="py-3 px-4 text-right">Redemptions</th>
+                <th className="py-3 px-4">Status</th>
+                <th className="py-3 px-4 text-right">Toggle</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="divide-y divide-[#E5E5E5] text-sm">
+              {coupons.map((c) => (
+                <tr key={c.code}>
+                  <td className="py-3 px-4 font-mono font-bold text-[#171717]">{c.code}</td>
+                  <td className="py-3 px-4 text-[#737373]">
+                    {c.type === 'percentage'
+                      ? `${c.value}% off`
+                      : c.type === 'fixed'
+                      ? `${formatCurrency(c.value)} off`
+                      : 'Free shipping'}
+                  </td>
+                  <td className="py-3 px-4 text-right tabular-nums">{formatCurrency(c.minOrderAmount)}</td>
+                  <td className="py-3 px-4 text-right tabular-nums">{c.usageCount}</td>
+                  <td className="py-3 px-4"><StatusLabel status={c.active ? 'active' : 'draft'} /></td>
+                  <td className="py-3 px-4 text-right">
+                    <Button variant="outline" size="sm" onClick={() => toggleCoupon(c.code)}>
+                      {c.active ? 'Pause' : 'Activate'}
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <Dialog open={open} onClose={() => setOpen(false)} title="Create Coupon">

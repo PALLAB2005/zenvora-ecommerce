@@ -120,9 +120,9 @@ export function StoreLayout() {
           scrolled ? 'shadow-[0_4px_20px_rgba(23,23,23,0.05)]' : ''
         }`}
       >
-        <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
+        <div className="max-w-[1360px] mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-8">
           {/* Zone 1: Single-line brand wordmark + mobile menu trigger */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
@@ -290,7 +290,7 @@ export function StoreLayout() {
               className="h-10 px-3.5 inline-flex items-center gap-2 rounded-xl bg-[#171717] text-white text-xs font-semibold hover:bg-[#2E2E2E] transition-colors cursor-pointer whitespace-nowrap shrink-0"
             >
               <ShoppingBag className="h-4 w-4" />
-              <span>Bag</span>
+              <span className="hidden sm:inline">Bag</span>
               <span className="tabular-nums bg-white/15 px-1.5 py-0.5 rounded-md">
                 {totalBagCount}
               </span>

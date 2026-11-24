@@ -323,42 +323,44 @@ export function SupplierProductsPage() {
       </div>
 
       <div className="bg-white border border-[#E5E5E5] rounded-2xl overflow-hidden">
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr className="border-b border-[#E5E5E5] bg-[#F8F8F7] text-[11px] font-semibold uppercase tracking-wider text-[#737373]">
-              <th className="py-3 px-4">Product</th>
-              <th className="py-3 px-4">SKU</th>
-              <th className="py-3 px-4 text-right">Wholesale Cost</th>
-              <th className="py-3 px-4 text-right">Stock</th>
-              <th className="py-3 px-4">Availability</th>
-              <th className="py-3 px-4 text-right">Action</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-[#E5E5E5] text-sm">
-            {products.map((p) => (
-              <tr key={p.id}>
-                <td className="py-3 px-4 font-semibold text-[#171717]">{p.name}</td>
-                <td className="py-3 px-4 font-mono text-xs text-[#737373]">{p.sku}</td>
-                <td className="py-3 px-4 text-right tabular-nums">{formatCurrency(p.costPrice)}</td>
-                <td className="py-3 px-4 text-right tabular-nums font-semibold">{p.stock}</td>
-                <td className="py-3 px-4"><StatusLabel status={p.status} /></td>
-                <td className="py-3 px-4 text-right">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => {
-                      const next = p.status === 'active' ? 'draft' : 'active';
-                      updateProduct(p.id, { status: next });
-                      pushToast({ title: `${p.name} set to ${next}`, variant: 'default' });
-                    }}
-                  >
-                    {p.status === 'active' ? 'Pause Listing' : 'Make Available'}
-                  </Button>
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[640px] text-left border-collapse">
+            <thead>
+              <tr className="border-b border-[#E5E5E5] bg-[#F8F8F7] text-[11px] font-semibold uppercase tracking-wider text-[#737373]">
+                <th className="py-3 px-4">Product</th>
+                <th className="py-3 px-4">SKU</th>
+                <th className="py-3 px-4 text-right">Wholesale Cost</th>
+                <th className="py-3 px-4 text-right">Stock</th>
+                <th className="py-3 px-4">Availability</th>
+                <th className="py-3 px-4 text-right">Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="divide-y divide-[#E5E5E5] text-sm">
+              {products.map((p) => (
+                <tr key={p.id}>
+                  <td className="py-3 px-4 font-semibold text-[#171717]">{p.name}</td>
+                  <td className="py-3 px-4 font-mono text-xs text-[#737373]">{p.sku}</td>
+                  <td className="py-3 px-4 text-right tabular-nums">{formatCurrency(p.costPrice)}</td>
+                  <td className="py-3 px-4 text-right tabular-nums font-semibold">{p.stock}</td>
+                  <td className="py-3 px-4"><StatusLabel status={p.status} /></td>
+                  <td className="py-3 px-4 text-right">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        const next = p.status === 'active' ? 'draft' : 'active';
+                        updateProduct(p.id, { status: next });
+                        pushToast({ title: `${p.name} set to ${next}`, variant: 'default' });
+                      }}
+                    >
+                      {p.status === 'active' ? 'Pause Listing' : 'Make Available'}
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

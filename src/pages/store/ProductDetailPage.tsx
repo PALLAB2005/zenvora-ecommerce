@@ -271,8 +271,8 @@ export function ProductDetailPage() {
               </span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="inline-flex items-center border border-[#E5E5E5] rounded-[10px] h-11">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-3">
+              <div className="order-1 sm:order-none inline-flex items-center border border-[#E5E5E5] rounded-[10px] h-11">
                 <button
                   type="button"
                   onClick={() => setQuantity((q) => Math.max(1, q - 1))}
@@ -299,7 +299,7 @@ export function ProductDetailPage() {
                 size="lg"
                 disabled={outOfStock}
                 onClick={() => handleAddToCart(true)}
-                className="flex-1"
+                className="order-3 sm:order-none w-full sm:w-auto sm:flex-1"
               >
                 <ShoppingBag className="h-4 w-4" />
                 {outOfStock ? 'Out of Stock' : 'Add to Cart'}
@@ -315,7 +315,7 @@ export function ProductDetailPage() {
                     variant: 'default',
                   });
                 }}
-                className={`h-12 w-12 rounded-[12px] border border-[#E5E5E5] inline-flex items-center justify-center transition-colors cursor-pointer shrink-0 ${
+                className={`order-2 sm:order-none h-12 w-12 rounded-[12px] border border-[#E5E5E5] inline-flex items-center justify-center transition-colors cursor-pointer shrink-0 ${
                   isWishlisted ? 'text-[#DC2626] bg-[#FEF2F2]' : 'text-[#171717] hover:bg-[#F8F8F7]'
                 }`}
               >

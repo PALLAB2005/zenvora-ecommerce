@@ -439,12 +439,12 @@ export function VerifyEmailPage() {
         <p className="text-sm text-[#737373] leading-relaxed">
           You can proceed directly to your customer dashboard or continue browsing the KOVA Atelier collection.
         </p>
-        <div className="flex gap-3 pt-2">
-          <Link to="/account/profile">
-            <Button variant="primary">Go to Account</Button>
+        <div className="flex flex-col sm:flex-row gap-3 pt-2">
+          <Link to="/account/profile" className="flex-1">
+            <Button variant="primary" className="w-full">Go to Account</Button>
           </Link>
-          <Link to="/shop">
-            <Button variant="outline">Browse Shop</Button>
+          <Link to="/shop" className="flex-1">
+            <Button variant="outline" className="w-full">Browse Shop</Button>
           </Link>
         </div>
       </div>

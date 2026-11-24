@@ -102,7 +102,7 @@ export function Tabs({
   return (
     <div
       role="tablist"
-      className={cn('inline-flex items-center gap-1 p-1 bg-[#F8F8F7] border border-[#E5E5E5] rounded-xl', className)}
+      className={cn('inline-flex max-w-full flex-wrap items-center gap-1 p-1 bg-[#F8F8F7] border border-[#E5E5E5] rounded-xl', className)}
     >
       {tabs.map((tab) => (
         <button
