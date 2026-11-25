@@ -174,7 +174,7 @@ See the [LICENSE](LICENSE) file for details.
 
 - GitHub: [@PALLAB2005](https://github.com/PALLAB2005)
 - Project Repository: [Zenvora E-Commerce](https://github.com/PALLAB2005/zenvora-ecommerce)
-- 🌐 **Portfolio:** [Visit My Portfolio](https://zenvora-nu.vercel.app/) 
+- 🌐 **zenvora:** [Visit My Portfolio](https://zenvora-nu.vercel.app/) 
 
 ---
 
