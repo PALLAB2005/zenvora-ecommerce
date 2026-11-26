@@ -23,7 +23,7 @@
 
 
 
-## Overview
+## Overview:
 
 **Zenvora** is a modern e-commerce platform concept focused on the Direct-to-Consumer (D2C) business model and dropshipping.
 
